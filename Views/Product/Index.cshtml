@@ -1,0 +1,52 @@
+@model KiloPrijsCalculator.Models.Product
+
+<h2>Calculate Kilo Prijs</h2>
+
+<form asp-action="Calculate" method="post">
+    <div class="form-group">
+        <label asp-for="Price"></label>
+        <input asp-for="Price" class="form-control" />
+        <span asp-validation-for="Price" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Weight"></label>
+        <input asp-for="Weight" class="form-control" />
+        <span asp-validation-for="Weight" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Label"></label>
+        <input asp-for="Label" class="form-control" />
+        <span asp-validation-for="Label" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Calculate</button>
+</form>
+
+@if (ViewBag.Calculations != null && ViewBag.Calculations.Count > 0)
+{
+    <h3>Saved Kilo Prijs Calculations</h3>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Label</th>
+                <th>Kilo Prijs (€ per kg)</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var calculation in ViewBag.Calculations)
+            {
+                <tr>
+                    <td>@calculation.Label</td>
+                    <td>@calculation.KiloPrijs.ToString("F2")</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <form asp-action="ClearCalculations" method="post">
+        <button type="submit" class="btn btn-danger">Clear All Calculations</button>
+    </form>
+}
+
+<script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.5.1.min.js"></script>
+<script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.19.1/jquery.validate.min.js"></script>
+<script src="https://ajax.aspnetcdn.com/ajax/mvc/5.2.3/jquery.validate.unobtrusive.min.js"></script>
