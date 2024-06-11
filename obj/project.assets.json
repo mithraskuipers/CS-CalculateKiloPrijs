@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/mkuipers/repos/project1/KiloPrijsCalculator/KiloPrijsCalculator.csproj",
+      "projectUniqueName": "/home/mkuipers/repos/CS-CalculateKiloPrijs/KiloPrijsCalculator.csproj",
       "projectName": "KiloPrijsCalculator",
-      "projectPath": "/home/mkuipers/repos/project1/KiloPrijsCalculator/KiloPrijsCalculator.csproj",
+      "projectPath": "/home/mkuipers/repos/CS-CalculateKiloPrijs/KiloPrijsCalculator.csproj",
       "packagesPath": "/home/mkuipers/.nuget/packages/",
-      "outputPath": "/home/mkuipers/repos/project1/KiloPrijsCalculator/obj/",
+      "outputPath": "/home/mkuipers/repos/CS-CalculateKiloPrijs/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/mkuipers/.nuget/NuGet/NuGet.Config"

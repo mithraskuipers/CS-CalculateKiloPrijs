@@ -15,6 +15,11 @@ namespace KiloPrijsCalculator.Models
         [Display(Name = "Label")]
         public string Label { get; set; }
 
-        public decimal KiloPrijs => (Weight > 0) ? (Price / (Weight / 1000m)) : 0;
+        [Display(Name = "Discount (%)")]
+        public int Discount { get; set; } = 0;
+
+        public decimal AdjustedPrice => Price * ((100 - Discount) / 100m);
+
+        public decimal KiloPrijs => (Weight > 0) ? (AdjustedPrice / (Weight / 1000m)) : 0;
     }
 }

@@ -2,7 +2,7 @@
 
 <h2>Calculate Kilo Prijs</h2>
 
-<form asp-action="Calculate" method="post">
+<form asp-action="Calculate" method="post" class="narrow-form">
     <div class="form-group">
         <label asp-for="Price"></label>
         <input asp-for="Price" class="form-control" />
@@ -18,25 +18,46 @@
         <input asp-for="Label" class="form-control" />
         <span asp-validation-for="Label" class="text-danger"></span>
     </div>
+    <div class="form-group">
+        <label asp-for="Discount">Discount (%) <span class="info-tooltip" data-toggle="tooltip" data-placement="right" title="The discount is only applied to the displayed price before further calculations are done.">(?)</span></label>
+        <select asp-for="Discount" class="form-control">
+            @for (int i = 0; i <= 50; i += 5)
+            {
+                <option value="@i">@i %</option>
+            }
+        </select>
+        <span asp-validation-for="Discount" class="text-danger"></span>
+    </div>
     <button type="submit" class="btn btn-primary">Calculate</button>
 </form>
 
 @if (ViewBag.Calculations != null && ViewBag.Calculations.Count > 0)
 {
     <h3>Saved Kilo Prijs Calculations</h3>
-    <table class="table table-striped">
+    <table class="table table-striped narrow-table">
         <thead>
             <tr>
                 <th>Label</th>
+                <th>Entered Price (€)</th>
+                <th>Entered Weight (g)</th>
                 <th>Kilo Prijs (€ per kg)</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
-            @foreach (var calculation in ViewBag.Calculations)
+            @for (int i = 0; i < ViewBag.Calculations.Count; i++)
             {
                 <tr>
-                    <td>@calculation.Label</td>
-                    <td>@calculation.KiloPrijs.ToString("F2")</td>
+                    <td>@ViewBag.Calculations[i].Label</td>
+                    <td>@ViewBag.Calculations[i].EnteredPrice.ToString("F2")</td>
+                    <td>@ViewBag.Calculations[i].EnteredWeight</td>
+                    <td>@ViewBag.Calculations[i].KiloPrijs.ToString("F2")</td>
+                    <td>
+                        <form asp-action="DeleteCalculation" method="post" style="display:inline;">
+                            <input type="hidden" name="index" value="@i" />
+                            <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                        </form>
+                    </td>
                 </tr>
             }
         </tbody>
@@ -50,3 +71,8 @@
 <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.5.1.min.js"></script>
 <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.19.1/jquery.validate.min.js"></script>
 <script src="https://ajax.aspnetcdn.com/ajax/mvc/5.2.3/jquery.validate.unobtrusive.min.js"></script>
+<script>
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+    })
+</script>

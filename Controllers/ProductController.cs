@@ -21,7 +21,13 @@ namespace KiloPrijsCalculator.Controllers
             if (ModelState.IsValid)
             {
                 var kiloPrijs = product.KiloPrijs;
-                _calculations.Add(new Calculation { Label = product.Label, KiloPrijs = kiloPrijs });
+                _calculations.Add(new Calculation
+                {
+                    Label = product.Label,
+                    KiloPrijs = kiloPrijs,
+                    EnteredPrice = product.Price,
+                    EnteredWeight = product.Weight
+                });
                 return RedirectToAction("Index");
             }
             ViewBag.Calculations = _calculations;
@@ -32,6 +38,16 @@ namespace KiloPrijsCalculator.Controllers
         public IActionResult ClearCalculations()
         {
             _calculations.Clear();
+            return RedirectToAction("Index");
+        }
+
+        [HttpPost]
+        public IActionResult DeleteCalculation(int index)
+        {
+            if (index >= 0 && index < _calculations.Count)
+            {
+                _calculations.RemoveAt(index);
+            }
             return RedirectToAction("Index");
         }
     }

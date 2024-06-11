@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("KiloPrijsCalculator")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7eda8b3347c10f3764769d8d2353330f4a2d5150")]
 [assembly: System.Reflection.AssemblyProductAttribute("KiloPrijsCalculator")]
 [assembly: System.Reflection.AssemblyTitleAttribute("KiloPrijsCalculator")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

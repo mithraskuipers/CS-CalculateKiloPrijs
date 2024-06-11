@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "v0KkE1YVU9PqtWYtB5fh+8IXEvaadYGABtaj7td6pnW6YxgykfCFpmnXpt68fs/ym6CTS0diftdKjGKALI7pTQ==",
+  "dgSpecHash": "UEeZ3GTl/mDXb0kneJEngI3HmeokMgS4nYmazNprBXoCx9ES2v+fzJSCj2I7NCiKVT/Gqu4c7A/KiRMCaRjkgg==",
   "success": true,
-  "projectFilePath": "/home/mkuipers/repos/project1/KiloPrijsCalculator/KiloPrijsCalculator.csproj",
+  "projectFilePath": "/home/mkuipers/repos/CS-CalculateKiloPrijs/KiloPrijsCalculator.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
