@@ -1,0 +1,7 @@
+/home/mkuipers/repos/CS-CalculateKiloPrijs/bin/Publish/KiloPrijsCalculator
+/home/mkuipers/repos/CS-CalculateKiloPrijs/bin/Publish/appsettings.Development.json
+/home/mkuipers/repos/CS-CalculateKiloPrijs/bin/Publish/appsettings.json
+/home/mkuipers/repos/CS-CalculateKiloPrijs/bin/Publish/KiloPrijsCalculator.dll
+/home/mkuipers/repos/CS-CalculateKiloPrijs/bin/Publish/KiloPrijsCalculator.deps.json
+/home/mkuipers/repos/CS-CalculateKiloPrijs/bin/Publish/KiloPrijsCalculator.runtimeconfig.json
+/home/mkuipers/repos/CS-CalculateKiloPrijs/bin/Publish/KiloPrijsCalculator.pdb
